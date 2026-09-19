@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Check required files exist
+        run: |
+          test -f index.html
+          test -f style.css
+          test -f app.js
+          test -f logic.js
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check logic.js
+          node --check app.js
+
+      - name: Run tests
+        run: node tests/logic.test.js
