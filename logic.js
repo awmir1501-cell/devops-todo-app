@@ -41,7 +41,7 @@ function clearCompleted(tasks) {
 
 function countRemaining(tasks) {
   return tasks.filter(function (task) {
-    return task.done === true;
+    return task.done === false;
   }).length;
 }
 
