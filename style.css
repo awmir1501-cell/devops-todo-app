@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1f1fe5, #7b2ff7, #f107a3);
+  background: linear-gradient(135deg, #1fe5a3, #0b011b, #f107a3);
   background-size: 300% 300%;
   animation: bgShift 12s ease infinite;   /* slowly moving gradient */
   min-height: 100vh;
